@@ -1,0 +1,39 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="textcenter text-white">
+            <h1>Shop in style</h1>
+            <p>With this shop hompeage template</p>
+        </div>
+    </div>
+</header>
+<main class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gy-4 gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100">
+                        <div class="badge bg-dark text-white position-absolute"
+                             style="top: 0.5rem; right: 0.5rem">
+                            Sale
+                        </div>
+                        <img src="/image/@item.Img" class="card-img-top" alt="..." />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-title">@item.Price @item.DiscountPrice</p>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+           
+        </div>
+    </div>
+</main>
+
